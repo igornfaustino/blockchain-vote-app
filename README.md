@@ -1,6 +1,6 @@
 # blockchain-vote-app
 
-The goal of this repository is to learn the basic comcepts of blockchain by developming a simple application
+The goal of this repository is to learn the basic concepts of blockchain by developing a simple application
 
 ## Goals
 
@@ -9,13 +9,14 @@ The goal of this repository is to learn the basic comcepts of blockchain by deve
 - [ ] Learn how to test contracts
 - [ ] Learn how to interact with contracts
 - [ ] Learn how to create smart contracts
+- [ ] Learn how to store user data
 
-## Aplication description
+## Application description
 
-A simple decentralized vote app that allow users to register new candidates and to vote on the desired candidate
+A simple decentralized vote app that allows users to register new candidates and to vote on the desired candidate
 
 ### Requirements
 
-- [ ] Allow to add more candidates
-- [ ] allow users to vote on an candidate via web browser
-- [ ] Show in a web page the number of votes for each candidate
+- [ ] Allow adding more candidates
+- [ ] allow users to vote on a candidate via web browser
+- [ ] Show on a web page the number of votes for each candidate
