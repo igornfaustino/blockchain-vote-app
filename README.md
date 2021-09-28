@@ -20,3 +20,9 @@ A simple decentralized vote app that allows users to register new candidates and
 - [ ] Allow adding more candidates
 - [ ] allow users to vote on a candidate via web browser
 - [ ] Show on a web page the number of votes for each candidate
+
+### Related Projects
+Other repositories created to complement this blockchain learning project
+
+#### Blockchain data structure
+[Simple blockchain representation](https://github.com/igornfaustino/blockchain-py) created in python
