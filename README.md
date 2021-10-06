@@ -26,3 +26,6 @@ Other repositories created to complement this blockchain learning project
 
 #### Blockchain data structure
 [Simple blockchain representation](https://github.com/igornfaustino/blockchain-py) created in python
+
+#### Simple Crypto
+[My first blockchain app](https://github.com/igornfaustino/igor-crypto-token) created using hardhat
