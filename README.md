@@ -4,12 +4,12 @@ The goal of this repository is to learn the basic concepts of blockchain by deve
 
 ## Goals
 
-- [ ] Learn the development flow of a blockchain app
+- [x] Learn the development flow of a blockchain app
 - [ ] Learn how to deploy a contract to blockchain
 - [ ] Learn how to test contracts
-- [ ] Learn how to interact with contracts
-- [ ] Learn how to create smart contracts
-- [ ] Learn how to store user data
+- [x] Learn how to interact with contracts
+- [x] Learn how to create smart contracts
+- [x] Learn how to store user data
 
 ## Application description
 
