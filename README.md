@@ -1,31 +1,15 @@
-# blockchain-vote-app
+# Basic Sample Hardhat Project
 
-The goal of this repository is to learn the basic concepts of blockchain by developing a simple application
+This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, a sample script that deploys that contract, and an example of a task implementation, which simply lists the available accounts.
 
-## Goals
+Try running some of the following tasks:
 
-- [x] Learn the development flow of a blockchain app
-- [ ] Learn how to deploy a contract to blockchain
-- [ ] Learn how to test contracts
-- [x] Learn how to interact with contracts
-- [x] Learn how to create smart contracts
-- [x] Learn how to store user data
-
-## Application description
-
-A simple decentralized vote app that allows users to register new candidates and to vote on the desired candidate
-
-### Requirements
-
-- [ ] Allow adding more candidates
-- [ ] allow users to vote on a candidate via web browser
-- [ ] Show on a web page the number of votes for each candidate
-
-### Related Projects
-Other repositories created to complement this blockchain learning project
-
-#### Blockchain data structure
-[Simple blockchain representation](https://github.com/igornfaustino/blockchain-py) created in python
-
-#### Simple Crypto
-[My first blockchain app](https://github.com/igornfaustino/igor-crypto-token) created using hardhat
+```shell
+npx hardhat accounts
+npx hardhat compile
+npx hardhat clean
+npx hardhat test
+npx hardhat node
+node scripts/sample-script.js
+npx hardhat help
+```
