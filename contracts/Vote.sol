@@ -10,6 +10,7 @@ contract Vote {
     }
 
     uint256 votesPerUser = 4;
+    uint256 numberOfvotes = 0;
     Candidate[3] public candidates;
     uint256 public expireDate;
     mapping(address => uint256) userVotesCount;
@@ -31,6 +32,7 @@ contract Vote {
         require(userVotesCount[msg.sender] < votesPerUser, "No more votes");
         userVotesCount[msg.sender]++;
         candidatesVotes[id]++;
+        numberOfvotes++;
     }
 
     function getCandidateVotes(uint256 id) external view returns (uint256) {
