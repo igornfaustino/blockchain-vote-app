@@ -1,4 +1,4 @@
-import "./App.css";
+import VoteOption from "./components/VoteOption";
 import useCandidates from "./hooks/useCandidates";
 import useVote from "./hooks/useVote";
 
@@ -7,18 +7,16 @@ function App() {
   const { vote, expireDate, totalVotes, remainingVotes } = useVote(candidates);
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>{expireDate}</p>
-        <p>total: {totalVotes}</p>
-        <p>remaining: {remainingVotes}</p>
-        <hr />
-        {candidates.map((candidate) => (
-          <p key={candidate.id} onClick={() => vote(candidate.id)}>
-            {candidate.name}
-          </p>
-        ))}
-      </header>
+    <div>
+      <p>{expireDate}</p>
+      <p>total: {totalVotes}</p>
+      <p>remaining: {remainingVotes}</p>
+      <hr />
+      {candidates.map((candidate) => (
+        <VoteOption key={candidate.id} onClick={() => vote(candidate.id)}>
+          {candidate.name}
+        </VoteOption>
+      ))}
     </div>
   );
 }

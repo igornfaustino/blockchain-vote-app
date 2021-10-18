@@ -9,16 +9,18 @@ const useCandidates = () => {
 
     const contract = getContract();
 
-    try {
-      const data = await contract.getCandidates();
-      const candidates = data.map((candidate) => ({
+    const numCandidates = (await contract.getNumOfCandidates()).toNumber();
+
+    const candidates = [];
+    for (let i = 0; i < numCandidates; i++) {
+      const candidate = await contract.getCandidate(i);
+      candidates.push({
         id: candidate.id.toNumber(),
         name: candidate.name,
-      }));
-      setCandidates(candidates);
-    } catch (err) {
-      console.log("Error: ", err);
+      });
     }
+
+    setCandidates(candidates);
   }
 
   useEffect(() => {
