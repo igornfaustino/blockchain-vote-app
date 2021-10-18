@@ -15,7 +15,7 @@ async function main() {
 
   // We get the contract to deploy
   const Vote = await hre.ethers.getContractFactory("Vote");
-  const vote = await Vote.deploy(1634428200);
+  const vote = await Vote.deploy(1634601000);
 
   await vote.deployed();
 

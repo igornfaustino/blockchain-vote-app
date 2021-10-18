@@ -38,4 +38,16 @@ contract Vote {
     function getCandidateVotes(uint256 id) external view returns (uint256) {
         return candidatesVotes[id];
     }
+
+    function getRemainingVotes(address user) external view returns (uint256) {
+        return votesPerUser - userVotesCount[user];
+    }
+
+    function getTotalVotes() external view returns (uint256) {
+        return numberOfvotes;
+    }
+
+    function getExpireDate() external view returns (uint256) {
+        return expireDate;
+    }
 }
