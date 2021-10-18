@@ -27,12 +27,15 @@ contract Vote {
         return candidates;
     }
 
-    function vote(uint256 id) external {
+    event newVote(uint256 totalOfVotes);
+
+    function vote(uint256 id) external returns (uint256) {
         require(block.timestamp < expireDate, "votation has ended");
         require(userVotesCount[msg.sender] < votesPerUser, "No more votes");
         userVotesCount[msg.sender]++;
         candidatesVotes[id]++;
         numberOfvotes++;
+        emit newVote(numberOfvotes);
     }
 
     function getCandidateVotes(uint256 id) external view returns (uint256) {

@@ -3,7 +3,7 @@ import { ethers } from "ethers";
 import Vote from "./artifacts/contracts/Vote.sol/Vote.json";
 import { useEffect, useState } from "react";
 
-const voteAddress = "0x0165878A594ca255338adfa4d48449f69242Eb8F";
+const voteAddress = "0x5FbDB2315678afecb367f032d93F642f64180aa3";
 
 const getContract = () => {
   const provider = new ethers.providers.Web3Provider(window.ethereum);
@@ -106,7 +106,6 @@ function App() {
 
     candidates.forEach((candidate) => fetchCandidateVotes(candidate.id));
     fetchRemainingVotes();
-    fetchTotalVotes();
   }
 
   useEffect(() => {
@@ -114,11 +113,14 @@ function App() {
     fetchRemainingVotes();
     fetchTotalVotes();
     fetchExpireDate();
-
-    return setInterval(() => {
-      fetchTotalVotes();
-    }, 5000);
   }, []);
+
+  useEffect(() => {
+    const contract = getContract();
+    contract.on("newVote", (total) => {
+      setTotalVotes(total.toNumber());
+    });
+  });
 
   useEffect(() => {
     candidates.forEach((candidate) => fetchCandidateVotes(candidate.id));
