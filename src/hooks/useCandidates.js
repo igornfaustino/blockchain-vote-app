@@ -25,6 +25,11 @@ const useCandidates = () => {
 
   useEffect(() => {
     fetchCandidates();
+
+    const contract = getContract();
+    contract.on("newCandidate", (total) => {
+      fetchCandidates();
+    });
   }, []);
 
   return candidates;

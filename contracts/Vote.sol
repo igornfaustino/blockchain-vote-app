@@ -18,6 +18,9 @@ contract Vote {
     mapping(uint256 => uint256) candidatesVotes;
     mapping(uint256 => Candidate) candidates;
 
+    event newVote(uint256 totalOfVotes);
+    event newCandidate(uint256 totalOfCandidates);
+
     constructor(uint256 _expireDate) {
         expireDate = _expireDate;
         candidates[0] = Candidate(0, "Pedro");
@@ -33,8 +36,6 @@ contract Vote {
         return candidates[id];
     }
 
-    event newVote(uint256 totalOfVotes);
-
     function vote(uint256 id) external {
         require(block.timestamp < expireDate, "votation has ended");
         require(userVotesCount[msg.sender] < votesPerUser, "No more votes");
@@ -42,6 +43,14 @@ contract Vote {
         candidatesVotes[id]++;
         numberOfvotes++;
         emit newVote(numberOfvotes);
+    }
+
+    function addCandidate(string memory name) external {
+        uint256 id = totalOfCandidates;
+        candidates[id] = Candidate(id, name);
+        totalOfCandidates++;
+        emit newCandidate(totalOfCandidates);
+        (totalOfCandidates);
     }
 
     function getCandidateVotes(uint256 id) external view returns (uint256) {
